@@ -13,6 +13,11 @@ void selection_sort(int *array, size_t size)
 	size_t min_index = 0;
 	int temp;
 
+	if (array == 0 || size < 2)
+	{
+		return;
+	}
+
 	for (i = 0; i < size - 1; i++)
 	{
 		min_index = i;
