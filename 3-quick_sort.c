@@ -6,7 +6,9 @@
  */
 void swap(int *i, int *j)
 {
-	int tmp = *i;
+	int tmp = 0;
+
+	tmp = *i;
 	*i = *j;
 	*j = tmp;
 }
@@ -58,7 +60,6 @@ void quicksort_recursion(int *array, int low, int high, size_t size)
 	if (low < high)
 	{
 		Lomuto = partition(array, low, high, size);
-
 		quicksort_recursion(array, low, Lomuto - 1, size);
 		quicksort_recursion(array, Lomuto + 1, high, size);
 	}
@@ -73,7 +74,8 @@ void quicksort_recursion(int *array, int low, int high, size_t size)
 void quick_sort(int *array, size_t size)
 {
 	if (size < 2)
+	{
 		return;
-
+	}
 	quicksort_recursion(array, 0, size - 1, size);
 }
